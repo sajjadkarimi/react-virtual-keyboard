@@ -21,9 +21,9 @@ For reporting issues or asking questions please use the [github issues](https://
 You can simply add this library to your react application using npm or yarn.
 
 ```bash
-npm install react-virtual-keyboard
+npm install react-virtual-keyboard-js
 
-yarn add react-virtual-keyboard
+yarn add react-virtual-keyboard-js
 ```
 
 ## How to use
@@ -31,7 +31,7 @@ yarn add react-virtual-keyboard
 After installing library, you can use VirtualKeyboard component in your application same as below:
 
 ```bash
-import { VirtualKeyboard } from 'react-virtual-keyboard';
+import { VirtualKeyboard } from 'react-virtual-keyboard-js';
 
 ...
       <VirtualKeyboard

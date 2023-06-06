@@ -1,5 +1,5 @@
 {
-  "name": "react-virtual-keyboard",
+  "name": "react-virtual-keyboard-js",
   "version": "0.0.1",
   "description": "Virtual keyboard for react apps",
   "main": "dist/cjs/index.js",
