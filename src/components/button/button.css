@@ -1,0 +1,28 @@
+.button-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  color: black;
+  border-radius: 5px;
+  height: 100%;
+}
+
+.button-container:hover {
+  border-color: blue;
+  color: blue;
+  cursor: pointer;
+}
+
+.button-text {
+  margin: auto;
+}
+
+.button-active {
+  border-color: blue;
+  color: blue;
+}
+
+.button-inactive {
+  border-color: black;
+  color: black;
+}
