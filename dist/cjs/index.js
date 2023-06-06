@@ -145,26 +145,26 @@ function VirtualKeyboard(props) {
                     gap: props.gap || "5px",
                 }, children: [keys
                         .slice(0, 13)
-                        .map((v) => (jsxRuntime.jsx(Button, Object.assign({ text: v, onClick: updateText }, props.button), v))), jsxRuntime.jsx(Button, Object.assign({ text: "\u232B", onClick: backspace }, props.button))] }), jsxRuntime.jsxs(FlexGrid, { column: 13, proportion: [16, ...[...Array(12)].map(() => 7)], style: {
+                        .map((v) => (jsxRuntime.jsx(Button, Object.assign({ text: v, onClick: updateText }, props.buttonProps), v))), jsxRuntime.jsx(Button, Object.assign({ text: "\u232B", onClick: backspace }, props.buttonProps))] }), jsxRuntime.jsxs(FlexGrid, { column: 13, proportion: [16, ...[...Array(12)].map(() => 7)], style: {
                     gap: props.gap || "5px",
-                }, children: [jsxRuntime.jsx(Button, Object.assign({ text: "Tab", onClick: tab }, props.button)), keys
+                }, children: [jsxRuntime.jsx(Button, Object.assign({ text: "Tab", onClick: tab }, props.buttonProps)), keys
                         .slice(13, 25)
-                        .map((v) => (jsxRuntime.jsx(Button, Object.assign({ text: v, onClick: updateText }, props.button), v)))] }), jsxRuntime.jsxs(FlexGrid, { column: 13, proportion: [...[...Array(12)].map(() => 7), 16], style: {
+                        .map((v) => (jsxRuntime.jsx(Button, Object.assign({ text: v, onClick: updateText }, props.buttonProps), v)))] }), jsxRuntime.jsxs(FlexGrid, { column: 13, proportion: [...[...Array(12)].map(() => 7), 16], style: {
                     gap: props.gap || "5px",
                 }, children: [keys
                         .slice(25, 37)
-                        .map((v) => (jsxRuntime.jsx(Button, Object.assign({ text: v, onClick: updateText }, props.button), v))), jsxRuntime.jsx(Button, Object.assign({ text: "Shift", onClick: () => setShiftOn((v) => !v), active: shiftOn }, props.button))] }), jsxRuntime.jsxs(FlexGrid, { column: 6, proportion: [
+                        .map((v) => (jsxRuntime.jsx(Button, Object.assign({ text: v, onClick: updateText }, props.buttonProps), v))), jsxRuntime.jsx(Button, Object.assign({ text: "Shift", onClick: () => setShiftOn((v) => !v), active: shiftOn }, props.buttonProps))] }), jsxRuntime.jsxs(FlexGrid, { column: 6, proportion: [
                     9,
                     ...[...Array(4)].map(() => 7),
                     28,
                     ...[...Array(5)].map(() => 7),
                 ], style: {
                     gap: props.gap || "5px",
-                }, children: [jsxRuntime.jsx(Button, Object.assign({ text: "Clear", onClick: clear }, props.button)), keys
+                }, children: [jsxRuntime.jsx(Button, Object.assign({ text: "Clear", onClick: clear }, props.buttonProps)), keys
                         .slice(37, 41)
-                        .map((v) => (jsxRuntime.jsx(Button, Object.assign({ text: v, onClick: updateText }, props.button), v))), jsxRuntime.jsx(Button, Object.assign({ text: "Space", onClick: space }, props.button)), keys
+                        .map((v) => (jsxRuntime.jsx(Button, Object.assign({ text: v, onClick: updateText }, props.buttonProps), v))), jsxRuntime.jsx(Button, Object.assign({ text: "Space", onClick: space }, props.buttonProps)), keys
                         .slice(41, 46)
-                        .map((v) => (jsxRuntime.jsx(Button, Object.assign({ text: v, onClick: updateText }, props.button), v)))] })] }));
+                        .map((v) => (jsxRuntime.jsx(Button, Object.assign({ text: v, onClick: updateText }, props.buttonProps), v)))] })] }));
 }
 
 exports.VirtualKeyboard = VirtualKeyboard;

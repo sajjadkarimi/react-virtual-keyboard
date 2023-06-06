@@ -23,7 +23,7 @@ export type ShuffleEvent =
 export interface IVirtualKeyboard {
   className?: string;
   shuffleOn?: ShuffleEvent[];
-  button?: {
+  buttonProps?: {
     className?: string;
     activeClassName?: string;
   };
@@ -111,10 +111,15 @@ export function VirtualKeyboard(props: IVirtualKeyboard): JSX.Element {
           keys
             .slice(0, 13)
             .map((v) => (
-              <Button key={v} text={v} onClick={updateText} {...props.button} />
+              <Button
+                key={v}
+                text={v}
+                onClick={updateText}
+                {...props.buttonProps}
+              />
             )) as any
         }
-        <Button text="⌫" onClick={backspace} {...props.button} />
+        <Button text="⌫" onClick={backspace} {...props.buttonProps} />
       </FlexGrid>
       <FlexGrid
         column={13}
@@ -123,12 +128,17 @@ export function VirtualKeyboard(props: IVirtualKeyboard): JSX.Element {
           gap: props.gap || "5px",
         }}
       >
-        <Button text="Tab" onClick={tab} {...props.button} />
+        <Button text="Tab" onClick={tab} {...props.buttonProps} />
         {
           keys
             .slice(13, 25)
             .map((v) => (
-              <Button key={v} text={v} onClick={updateText} {...props.button} />
+              <Button
+                key={v}
+                text={v}
+                onClick={updateText}
+                {...props.buttonProps}
+              />
             )) as any
         }
       </FlexGrid>
@@ -143,14 +153,19 @@ export function VirtualKeyboard(props: IVirtualKeyboard): JSX.Element {
           keys
             .slice(25, 37)
             .map((v) => (
-              <Button key={v} text={v} onClick={updateText} {...props.button} />
+              <Button
+                key={v}
+                text={v}
+                onClick={updateText}
+                {...props.buttonProps}
+              />
             )) as any
         }
         <Button
           text="Shift"
           onClick={() => setShiftOn((v) => !v)}
           active={shiftOn}
-          {...props.button}
+          {...props.buttonProps}
         />
       </FlexGrid>
       <FlexGrid
@@ -165,20 +180,30 @@ export function VirtualKeyboard(props: IVirtualKeyboard): JSX.Element {
           gap: props.gap || "5px",
         }}
       >
-        <Button text="Clear" onClick={clear} {...props.button} />
+        <Button text="Clear" onClick={clear} {...props.buttonProps} />
         {
           keys
             .slice(37, 41)
             .map((v) => (
-              <Button key={v} text={v} onClick={updateText} {...props.button} />
+              <Button
+                key={v}
+                text={v}
+                onClick={updateText}
+                {...props.buttonProps}
+              />
             )) as any
         }
-        <Button text="Space" onClick={space} {...props.button} />
+        <Button text="Space" onClick={space} {...props.buttonProps} />
         {
           keys
             .slice(41, 46)
             .map((v) => (
-              <Button key={v} text={v} onClick={updateText} {...props.button} />
+              <Button
+                key={v}
+                text={v}
+                onClick={updateText}
+                {...props.buttonProps}
+              />
             )) as any
         }
       </FlexGrid>

@@ -7,7 +7,7 @@ type ShuffleEvent = "start" | "tab" | "backspace" | "space" | "charkey" | "clear
 interface IVirtualKeyboard {
     className?: string;
     shuffleOn?: ShuffleEvent[];
-    button?: {
+    buttonProps?: {
         className?: string;
         activeClassName?: string;
     };

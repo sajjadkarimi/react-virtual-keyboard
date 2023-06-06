@@ -7,7 +7,7 @@ export type ShuffleEvent = "start" | "tab" | "backspace" | "space" | "charkey" |
 export interface IVirtualKeyboard {
     className?: string;
     shuffleOn?: ShuffleEvent[];
-    button?: {
+    buttonProps?: {
         className?: string;
         activeClassName?: string;
     };
