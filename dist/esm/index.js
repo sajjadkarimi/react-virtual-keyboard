@@ -1,6 +1,36 @@
 import { jsx, jsxs } from 'react/jsx-runtime';
 import { Children, useState, useCallback, useReducer, useMemo, useEffect } from 'react';
 
+function styleInject(css, ref) {
+  if ( ref === void 0 ) ref = {};
+  var insertAt = ref.insertAt;
+
+  if (!css || typeof document === 'undefined') { return; }
+
+  var head = document.head || document.getElementsByTagName('head')[0];
+  var style = document.createElement('style');
+  style.type = 'text/css';
+
+  if (insertAt === 'top') {
+    if (head.firstChild) {
+      head.insertBefore(style, head.firstChild);
+    } else {
+      head.appendChild(style);
+    }
+  } else {
+    head.appendChild(style);
+  }
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var css_248z$1 = ".button-container {\n  display: flex;\n  align-items: center;\n  border: 1px solid black;\n  color: black;\n  border-radius: 5px;\n  height: 100%;\n}\n\n.button-container:hover {\n  border-color: blue;\n  color: blue;\n  cursor: pointer;\n}\n\n.button-text {\n  margin: auto;\n}\n\n.button-active {\n  border-color: blue;\n  color: blue;\n}\n\n.button-inactive {\n  border-color: black;\n  color: black;\n}\n";
+styleInject(css_248z$1);
+
 function Button(props) {
     return (jsx("div", { className: `button-container ${props.className} ${props.active
             ? props.activeClassName
@@ -8,6 +38,9 @@ function Button(props) {
                 : "button-active"
             : ""}`, onClick: () => props.onClick(props.text), children: jsx("div", { className: "button-text", children: props.text }) }));
 }
+
+var css_248z = ".flex-grid-container {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-wrap: nowrap;\n  justify-content: space-between;\n  align-content: space-between;\n}\n";
+styleInject(css_248z);
 
 function FlexGrid(props) {
     return (jsx("div", { className: `flex-grid-container ${props.className}`, style: props.style, children: Children.map(props.children, (child, index) => {
